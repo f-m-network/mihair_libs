@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_partner_mihair_form" model="ir.ui.view">
+            <field name="name">res.partner.mihair.netbuy</field>
+            <field name="model">res.partner</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//div[@class='oe_edit_only']" position="inside">
+                    <field name="is_salon"/>
+                    <label for="is_salon" string="Is a Salon?"/>
+                    <field name="is_address"/>
+                    <label for="is_address" string="Is an Address?"/>
+                </xpath>
+
+                <notebook position="inside">
+                    <page string="mi.Hair Vendor"
+                          attrs="{'invisible':[('supplier','=', False)]}">
+                        <group colspan="4" col="4" name="pos">
+                            <field name="mihair_vendorid"/>
+                        </group>
+                    </page>
+
+                    <page string="mi.Hair Salon"
+                          attrs="{'invisible':[('is_salon','=', False)]}">
+                        <group colspan="4" col="4" name="pos">
+                            <separator string="Basic Info" colspan="4"/>
+                            <field name="wifi" colspan="2"/>
+                            <field name="online_scheduling" colspan="2"/>
+                            <field name="mihair_uuid" colspan="2"/>
+
+                            <!--
+                            <separator string="Revenues" colspan="4"/>
+                            <field name="monthly_price" colspan="2"/>
+                            <field name="get_mrr" colspan="2"/>
+                            <field name="get_arr" colspan="2"/>
+                            <field name="get_tcv" colspan="2"/>
+                            -->
+
+                            <separator string="Salon Categories" colspan="4"/>
+                            <field name="salon_types" widget="many2many_tags"
+                                    colspan="4"/>
+                            <field name="additional_services" widget="many2many_tags"
+                                    colspan="4"/>
+                            <field name="cell_carriers" widget="many2many_tags"
+                                    colspan="4"/>
+                        </group>
+                    </page>
+                </notebook>
+
+            </field>
+        </record>
+
+    </data>
+</openerp>

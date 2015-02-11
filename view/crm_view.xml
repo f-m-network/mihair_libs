@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_crm_lead_mihair_form" model="ir.ui.view">
+            <field name="name">crm.lead.mihair</field>
+            <field name="model">crm.lead</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+            <field name="arch" type="xml">
+
+                <notebook position="inside">
+                    <page string="mi.Hair" >
+                        <group colspan="4" col="4" name="pos">
+                            <field name="tablet_qty" colspan="2"/>
+                            <field name="contract_payment" colspan="2" widget="url"/>
+
+                            <separator string="Revenues" colspan="4"/>
+                            <field name="monthly_price" colspan="2"/>
+                            <field name="get_mrr" colspan="2"/>
+                            <field name="get_arr" colspan="2"/>
+                            <field name="get_tcv" colspan="2"/>
+
+                            <separator string="Contract" colspan="4"/>
+                            <field name="document_id" colspan="4" readonly="True"/>
+                            <field name="signed_doc" readonly="True" colspan="2"/>
+                            <field name="initial_payment" readonly="True" colspan="2"/>
+
+                            <button name="print_contract"
+                                string="Print Contract"
+                                type="object" icon="gtk-print"/>
+
+                            <button name="print_contract"
+                                    string="Check Signature"
+                                    type="object" icon="gtk-gears"
+                                    attrs="{'invisible':[('signed_doc','=', True)]}"/>
+
+                            <button name="print_contract"
+                                string="Send Reminder"
+                                type="object" colspan="2"
+                                attrs="{'invisible':[('signed_doc','=', True)]}"/>
+
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+    </data>
+</openerp>

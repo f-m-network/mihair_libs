@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_product_form_extended_description" model="ir.ui.view">
+            <field name="name">product.product.ext.description</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view" />
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="mi.Hair">
+                        <group colspan="2" col="2" name="pos">
+                            <field name="mihair_product_id"/>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+        <!--
+        <record id="view_product_tree_extended_description" model="ir.ui.view">
+            <field name="name">product.product.ext.description</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_product_tree_view" />
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="mihair_product_id"/>
+                 </field>
+            </field>
+        </record>
+        -->
+
+    </data>
+</openerp>

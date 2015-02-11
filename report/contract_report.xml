@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report
+                id="report_webkit_contract"
+                model="oerp_mihair.contract_report"
+                name="webkit.contract_report"
+                file="oerp_mihair/report/contract_report.mako"
+                string="mi.Hair | Account Contract "
+                report_type="webkit"
+            />
+    </data>
+</openerp>

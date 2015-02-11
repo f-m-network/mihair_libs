@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <!-- Views -->
+
+        <!-- TREE -->
+        <record id="mihair_echosign_tree_view" model="ir.ui.view">
+            <field name="name">mihair.echosign.tree</field>
+            <field name="model">mihair.echosign</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="EchoSign APIs" colors="brown:enabled=='False';green:enabled=='True'">
+                    <field name="name"/>
+                    <field name="contract_subject"/>
+                    <field name="application_id"/>
+                    <field name="enabled"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="mihair_cherrypy_tree_view" model="ir.ui.view">
+            <field name="name">mihair.cherrypy.tree</field>
+            <field name="model">mihair.cherrypy</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="EchoSign APIs" colors="brown:enabled=='False';green:enabled=='True'">
+                    <field name="url"/>
+                    <field name="enabled"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- FORMS -->
+        <record id="mihair_api_form_view" model="ir.ui.view">
+            <field name="name">mihair.api.form</field>
+            <field name="model">mihair.api</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Api Configuration" version='7.0'>
+                <sheet>
+                    <separator string="Basic Credentials" colspan="4"/>
+                    <group colspan="2" cols="4">
+                        <field name="name"/>
+                        <field name="url"/>
+                        <field name="api_key"/>
+                    </group>
+                 </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="mihair_echosign_form_view" model="ir.ui.view">
+            <field name="name">mihair.echosign.form</field>
+            <field name="model">mihair.echosign</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Api Configuration" version='7.0'>
+                    <sheet>
+                        <separator string="Adobe EchoSign Credentials" colspan="4"/>
+                        <group colspan="4" cols="4">
+                            <field name="name" colspan="2"/>
+                            <field name="api_key" colspan="2"/>
+                        </group>
+                        <group colspan="4" cols="4">
+                            <field name="application_secret" colspan="2"/>
+                            <field name="application_id" colspan="2"/>
+                            <field name="enabled"/>
+                            <separator name="Contract Content" colspan="4"/>
+                            <field name="contract_subject"/>
+                            <field name="contract_message"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="mihair_cherrypy_form_view" model="ir.ui.view">
+            <field name="name">mihair.cherrypy.form</field>
+            <field name="model">mihair.cherrypy</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Cherrypy Configuration" version='7.0'>
+                    <sheet>
+                        <separator string="Cherrypy" colspan="4"/>
+                        <group colspan="4" cols="4">
+                            <field name="url" colspan="2"/>
+                            <field name="enabled" colspan="2"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="mihair_salon_type_form_view" model="ir.ui.view">
+            <field name="name">mihair.salon_type.form</field>
+            <field name="model">mihair.salon_type</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Salon Configuration" version='7.0'>
+                <sheet>
+                    <separator string="Salon Type" colspan="4"/>
+                    <group colspan="2" cols="4">
+                        <field name="name"/>
+                    </group>
+                </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="mihair_additional_services_form_view" model="ir.ui.view">
+            <field name="name">mihair.additional_services.form</field>
+            <field name="model">mihair.additional_services</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Salon Configuration" version='7.0'>
+                <sheet>
+                    <separator string="Additional Services" colspan="4"/>
+                    <group colspan="2" cols="4">
+                        <field name="name"/>
+                    </group>
+                </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="mihair_cell_carriers_form_view" model="ir.ui.view">
+            <field name="name">mihair.cell_carriers.form</field>
+            <field name="model">mihair.cell_carriers</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Salon Configuration" version='7.0'>
+                    <separator string="Cell Carriers" colspan="4"/>
+                    <group colspan="2" cols="4">
+                        <field name="id"/>
+                        <field name="name"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- ACTION  ITEMS -->
+        <record id="mihair_api_action" model="ir.actions.act_window">
+            <field name="name">Spree APIs</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mihair.api</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field> 
+            <field name="view_id" eval="False"/>
+        </record>
+
+        <record id="mihair_echosign_action" model="ir.actions.act_window">
+            <field name="name">EchoSign APIs</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mihair.echosign</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" eval="False"/>
+        </record>
+
+        <record id="mihair_cherrypy_action" model="ir.actions.act_window">
+            <field name="name">Cherrypy Configuration</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mihair.cherrypy</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" eval="False"/>
+        </record>
+
+        <record id="mihair_salon_type_action" model="ir.actions.act_window">
+            <field name="name">Salon Types</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mihair.salon_type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" eval="False"/>
+        </record>
+
+        <record id="mihair_salon_additional_services_action" model="ir.actions.act_window">
+            <field name="name">Salon Additional Services</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mihair.additional_services</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" eval="False"/>
+        </record>
+
+        <record id="mihair_salon_cell_carriers_action" model="ir.actions.act_window">
+            <field name="name">Salon Cell Carriers</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mihair.cell_carriers</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" eval="False"/>
+        </record>
+
+        <!-- MENU  ITEMS -->
+        <menuitem name="mi.Hair" id="menu_mihair_root" 
+            icon="terp-partner"
+            web_icon="images/logo.png"
+            web_icon_hover="images/logo-hover.png"/>
+
+        <menuitem name="Configuration"
+            id="menu_mihair_main"
+            parent="menu_mihair_root"
+            sequence="1" />
+
+        <menuitem name="Spree APIs"
+            id="menu_mihair_api" 
+            parent="menu_mihair_main"
+            action="mihair_api_action"
+            sequence="0" />
+
+        <menuitem name="EchoSign APIs"
+                  id="menu_echosign_api"
+                  parent="menu_mihair_main"
+                  action="mihair_echosign_action"
+                  sequence="1" />
+
+        <menuitem name="Cherrypy Configuration"
+                  id="menu_cherrypy"
+                  parent="menu_mihair_main"
+                  action="mihair_cherrypy_action"
+                  sequence="2" />
+
+        <menuitem name="Salon Type"
+            id="menu_mihair_salon_type"
+            parent="menu_mihair_main"
+            action="mihair_salon_type_action"
+            sequence="3" />
+
+        <menuitem name="Salon Additional Services"
+            id="menu_mihair_additional_services"
+            parent="menu_mihair_main"
+            action="mihair_salon_additional_services_action"
+            sequence="4" />
+
+        <menuitem name="Salon Cell Carriers"
+            id="menu_mihair_cell_carriers"
+            parent="menu_mihair_main"
+            action="mihair_salon_cell_carriers_action"
+            sequence="5" />
+
+    </data>
+</openerp>

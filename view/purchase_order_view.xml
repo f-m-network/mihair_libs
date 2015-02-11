@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="purchase_order_form_mihair" model="ir.ui.view">
+            <field name="name">purchase.order.mihair</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="mi.Hair">
+                        <group colspan="4" col="4" name="pos">
+
+                            <separator string="Spree" colspan="4"/>
+                            <field name="spree_order_id" colspan="2"/>
+                            <field name="spree_order_line_id" colspan="2"/>
+
+                            <separator string="Vendor Site Info" colspan="4"/>
+
+                            <field name="cherrypy_id" colspan="4"/>
+                            <field name="cherrypy_status" colspan="4"/>
+                            <field name="mail_carrier" colspan="2"/>
+                            <field name="tracking_number" colspan="2"/>
+                            <field name="vendor_comments" colspan="4"/>
+
+                            <group colspan="2">
+                                <separator string="Billing Address" colspan="2"/>
+                                <field name="spree_billing_full_name" placeholder="Full Name"/>
+                                <field name="spree_billing_address1" placeholder="Address 1"/>
+                                <field name="spree_billing_address2" placeholder="Address 2"/>
+                                <field name="spree_billing_city" placeholder="City"/>
+                                <field name="spree_billing_state" placeholder="State"/>
+                                <field name="spree_billing_zip" placeholder="ZIP"/>
+                                <field name="spree_billing_phone" placeholder="Phone"/>
+                            </group>
+
+                            <group colspan="2">
+                                <separator string="Shipping Address" colspan="2"/>
+                                <field name="spree_shipping_full_name" placeholder="Full Name"/>
+                                <field name="spree_shipping_address1" placeholder="Address 1"/>
+                                <field name="spree_shipping_address2" placeholder="Address 2"/>
+                                <field name="spree_shipping_city" placeholder="City"/>
+                                <field name="spree_shipping_state" placeholder="State"/>
+                                <field name="spree_shipping_zip" placeholder="ZIP"/>
+                                <field name="spree_shipping_phone" placeholder="Phone"/>
+                            </group>
+
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+    </data>
+</openerp>
